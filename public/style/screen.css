@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #1b1f25;
+    background: #e4f4fa url(../images/bgd-body.jpg) 50% 0 repeat-y;
+    font-family: "Lucida Sans", Helvetica, Arial, Sans-Serif;
+    font-size: 9pt;
+}
+
+body * {
+    margin: 0;
+}
+
+#content {
+    width: 780px;
+    margin: 0 auto;
+    padding: 150px 0 0 0;
+    background: url(../images/bgd-top.png) repeat-x;
+}
+
+h1#logo {
+	background: url(../images/logo.png) no-repeat 0 0;
+	width: 172px;
+	height: 66px;
+	margin: 0 auto;
+}
+
+h1#logo span {
+	display: none;
+}
+
+h2 {
+	line-height: 4em;
+	font-size: 75%;
+	text-align: center;
+	color: #A0A0A0;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 0.25em;
+}
+
+h3 {
+	width: 52.5em;
+	margin: 1em auto 0 auto;
+	line-height: 4em;
+	font-size: 75%;
+	text-align: center;
+	color: #808080;
+	text-transform: uppercase;
+	font-weight: normal;
+	border-top: 1px solid #DDD;
+	letter-spacing: 0.25em;
+}
