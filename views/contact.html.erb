@@ -1,0 +1,56 @@
+                <div id="content" class="contact">
+                    <div class="vcard">
+                        <div class="org">
+                            Cabinet Muriel Artis Avocat
+                        </div>
+                        <div class="adr">
+                            <div class="street-address">
+                                11, boulevard de la Roche du Roi
+                            </div>
+                            <span class="postal-code">73100</span>
+                            <span class="locality">Aix-les-Bains</span>
+                            <span class="country-name">France</span>
+                        </div>
+                        <!--div>
+                            <a class="email" href="mailto:ma@artis-avocat.com">ma@artis-avocat.com</a>
+                        </div-->
+                        <div class="telnumber">
+                            Tél. : <span class="tel">(+33)123456789</span>
+                        </div>
+                    </div>
+                    <div class="firstbloc">
+                    	<h2>Contactez-nous</h2>
+                        <form id="contactform" action="/beta/contact" method="post">
+                            <input type="hidden" name="action" value="send"/>
+                            <p><label for="name">Nom *</label><input id="nom" class="text" name="name" type="text" size="32" maxlength="128" alt="Votre nom" value="<%= session[:name] %>"/></p>
+                            <p><label for="email">E-mail *</label><input id="email" class="text" name="email" type="text" size="32" maxlength="128" alt="Votre e-mail" value="<%= session[:email] %>"/></p>
+                            <p><label for="message">Message *</label><textarea id="message" name="message" rows="6" cols="52"><%= session[:message] %></textarea></p>
+                            <p><label for="captcha_seesion">Captcha</label><%= captcha_image_tag %></p>
+                            <p><label for="captcha-answer">Texte de l'image ? *</label><%= captcha_answer_tag %></p>
+                            <div class="buttons">
+                                <p><small>* Informations obligatoires</small></p>
+                                <p><input class="button right-space" type="submit" value=" Envoyer "/><input class="button" type="reset" value=" Effacer "/></p>
+                            </div>
+                            <% if session[:mailsent] %>
+                            <div class="message">
+                                <p><strong>Votre message a bien été envoyé !</strong></p>
+                                <p>Nous vous répondrons dans les meilleurs délais.</p>
+                            </div>
+                            <% end %>
+                        </form>
+                    </div>
+                    <div id="plan" class="firstbloc">
+                        <h2>Plan d'accès</h2>
+                        <div id="cadre-map">
+                            <div id="map"></div>
+                        </div>
+                        <form id="routeSearch" action="#" method="post" onsubmit="loadRoute(this.from.value); return false" onreset="this.from.value=''; resetRoute(); return false">
+                            <h3>Votre itinéraire pour nous rejoindre</h3>
+                            <p><label for="nom">Votre adresse de départ </label><input id="from" class="text" name="from" type="text" size="32" maxlength="128" alt="Adresse de départ"/></p>
+                            <div class="buttons">
+                                <p><input class="button right-space" type="submit" value=" Afficher "/><input class="button" type="reset" value=" Effacer "/></p>
+                            </div>
+                        </form>
+                        <div id="route"></div>
+                    </div>
+                </div>

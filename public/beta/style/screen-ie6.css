@@ -1,0 +1,42 @@
+#container {
+	background: url(images/container.jpg) 1px 0 no-repeat;
+}
+
+#menu {
+	margin: 32px 5px 0 16px;
+}
+
+#menu li {
+    height: 2em;
+}
+
+#menu li a {
+    height: 2em;
+}
+
+#content {
+	margin: 32px 16px;
+}
+
+#from {
+	width: 260px;
+}
+
+dl.level1 dd, dl.level1 dd.level2 dl dt {
+	margin-left: 12px;
+	background: url(bullet-square-green-pale.jpg) no-repeat 0 0.55em;
+	padding-left: 14px;
+}
+
+dl.level1 dd.level2 dl dt {
+	text-transform: none;
+	border-bottom: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+dl.level1 dl.level2 dl dd {
+	margin-left: 1em;
+	background: url(bullet-square-blue-pale.jpg) no-repeat 0 0.55em;
+	padding-left: 14px;
+}
