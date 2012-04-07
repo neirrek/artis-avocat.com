@@ -73,12 +73,9 @@ class Main < Sinatra::Base
   end
 
   def show_page(page, options = {}, locals = {})
-    begin
-      session[:page] = page
-      erb :"#{page}.html", options, locals
-    rescue Errno::ENOENT
-      halt 404
-    end
+    halt 404 unless File.exist?("views/#{page}.html.erb")
+    session[:page] = page
+    erb :"#{page}.html", options, locals
   end
 
 end
