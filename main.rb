@@ -22,12 +22,6 @@ end
 
 class Main < Sinatra::Base
 
-  root_dir = File.dirname(__FILE__)
-
-  set :views, "#{root_dir}/views"
-  set :public, "#{root_dir}/public"
-  set :app_file, File.join(root_dir, 'main.rb')
-
   enable :sessions
 
   get '/' do
