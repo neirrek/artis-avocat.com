@@ -3,10 +3,8 @@ require 'bundler'
 Bundler.setup
 
 require 'sinatra/base'
-require 'sinatra/captcha'
+require 'sinatra/opencaptcha'
 require 'mail'
-
-include Sinatra::Captcha
 
 Mail.defaults do
   delivery_method :smtp, {
@@ -21,6 +19,8 @@ Mail.defaults do
 end
 
 class Main < Sinatra::Base
+
+  helpers Sinatra::OpenCaptcha
 
   enable :sessions
 
@@ -45,7 +45,7 @@ class Main < Sinatra::Base
     session[:name] = name
     session[:email] = email
     session[:message] = message
-    if captcha_pass?
+    if open_captcha_valid?
       Mail.deliver do
         from email
         to ENV['MAIL_TO']

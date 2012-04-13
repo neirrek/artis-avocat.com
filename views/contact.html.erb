@@ -25,8 +25,7 @@
                             <p><label for="name">Nom *</label><input id="nom" class="text" name="name" type="text" size="32" maxlength="128" alt="Votre nom" value="<%= session[:name] %>"/></p>
                             <p><label for="email">E-mail *</label><input id="email" class="text" name="email" type="text" size="32" maxlength="128" alt="Votre e-mail" value="<%= session[:email] %>"/></p>
                             <p><label for="message">Message *</label><textarea id="message" name="message" rows="6" cols="52"><%= session[:message] %></textarea></p>
-                            <p><label for="captcha_seesion">Captcha</label><%= captcha_image_tag %></p>
-                            <p><label for="captcha-answer">Texte de l'image ? *</label><%= captcha_answer_tag %></p>
+                            <%= open_captcha :answer_input_label => 'Que lisez-vous?*: ', :answer_input_class => 'text' %>
                             <div class="buttons">
                                 <p><small>* Informations obligatoires</small></p>
                                 <p><input class="button right-space" type="submit" value=" Envoyer "/><input class="button" type="reset" value=" Effacer "/></p>
