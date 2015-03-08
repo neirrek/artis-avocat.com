@@ -1,5 +1,7 @@
-source :gemcutter
+source "https://rubygems.org"
+ruby "1.9.3"
 
+gem "puma"
 gem "sinatra", "~> 1.3.2"
 gem "rest-client", "~> 1.6.7"
 gem "uuidtools", "~> 2.1.2"
